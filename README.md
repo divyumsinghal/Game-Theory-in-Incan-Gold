@@ -1,8 +1,3 @@
----
-runme:
-  id: 01HQ2XGV7ZSNK2WDSG4KWZJ4TE
-  version: v3
----
 
 # Game-Theory-in-Incan-Gold
 
