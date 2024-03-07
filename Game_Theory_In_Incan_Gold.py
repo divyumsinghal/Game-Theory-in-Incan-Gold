@@ -7,8 +7,7 @@ import os
 # Function to calculate the probability of encountering a deadly hazard in the temple
 def calculate_deadly_hazard_probability(cards_drawn_so_far, full_deck):
     # Extract all hazard cards drawn so far
-    drawn_hazards = [
-        card for card in cards_drawn_so_far if card.type == "hazard"]
+    drawn_hazards = [card for card in cards_drawn_so_far if card.type == "hazard"]
     # Calculate the potential danger cards based on the number of drawn hazards
     danger_cards = 2 * len(drawn_hazards)
     # Calculate the total remaining cards in the deck
@@ -21,11 +20,9 @@ def calculate_deadly_hazard_probability(cards_drawn_so_far, full_deck):
 # Function to calculate the expected treasure value based on drawn cards
 def calculate_expected_treasure_value(cards_drawn_so_far, treasures, full_deck):
     # Extract all treasure cards drawn so far
-    drawn_treasures = [
-        card for card in cards_drawn_so_far if card.type == "treasure"]
+    drawn_treasures = [card for card in cards_drawn_so_far if card.type == "treasure"]
     # Determine the remaining treasures not yet drawn
-    left_treasure = [
-        treasure for treasure in treasures if treasure not in drawn_treasures]
+    left_treasure = [treasure for treasure in treasures if treasure not in drawn_treasures]
     # Calculate the total value of remaining treasures
     total_value = sum([card.value for card in left_treasure])
     # Calculate the total remaining cards in the deck
@@ -288,12 +285,15 @@ if __name__ == "__main__":
         game_data = []
 
     # Example usage
-    game = IncanGoldGame(3)
-    
-    game.play_game()
+        
+    while (True):
 
-    # Save the updated data to the JSON file
-    with open('game_data.json', 'w') as file:
-        json.dump(game_data, file)
+        game = IncanGoldGame(2)
+        
+        game.play_game()
+
+        # Save the updated data to the JSON file
+        with open('game_data.json', 'w') as file:
+            json.dump(game_data, file)
 
 
